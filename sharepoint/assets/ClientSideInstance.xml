@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="Branding"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="8e971993-fbcf-4ed8-a1af-7f574e2408d0"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>

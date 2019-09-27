@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
+
+  "id": "aacd276c-a2a3-4443-af63-976f33f69d4c",
+  "alias": "GlobalIdentityApplicationCustomizer",
+  "componentType": "Extension",
+  "extensionType": "ApplicationCustomizer",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false
+}

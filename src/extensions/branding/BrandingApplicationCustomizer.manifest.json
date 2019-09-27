@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
+
+  "id": "8e971993-fbcf-4ed8-a1af-7f574e2408d0",
+  "alias": "BrandingApplicationCustomizer",
+  "componentType": "Extension",
+  "extensionType": "ApplicationCustomizer",
+  "version": "*",
+  "manifestVersion": 2,
+
+  "requiresCustomScript": false
+}

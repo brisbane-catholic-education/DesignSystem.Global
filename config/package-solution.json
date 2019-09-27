@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "BCE Design System Branding Core",
+    "id": "550183df-a3c0-4e87-bc63-cd23892a7c5a",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "features": [
+      {
+        "title": "BCE Design System Branding Core",
+        "description": "Deploys a custom action with ClientSideComponentId association",
+        "id": "0ddf7198-6b9b-4069-a43c-bb35db7b49be",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/bce-design-system-branding.sppkg"
+  }
+}

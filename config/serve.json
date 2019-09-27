@@ -1,0 +1,81 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4322,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://devportal.development.dev/sites/team/",
+      "customActions": {
+        "8e971993-fbcf-4ed8-a1af-7f574e2408d0": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {},
+          "sequence": "100"
+        },
+        "70f50eee-f9d8-46b1-8da6-1c2a4694774b": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {},
+          "sequence": "200"
+        },
+        "aacd276c-a2a3-4443-af63-976f33f69d4c": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {},
+          "sequence": "300"
+        },
+        "f9a7ad4c-8cd4-4f08-bb25-4c77b9fb3dfe": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {},
+          "sequence": "400"
+        }
+      }
+    },
+    "branding": {
+      "pageUrl": "https://devportal.development.dev/sites/team/",
+      "customActions": {
+        "8e971993-fbcf-4ed8-a1af-7f574e2408d0": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {}
+        }
+      }
+    },
+    "globalFooter": {
+      "pageUrl": "https://devportal.development.dev/sites/team/",
+      "customActions": {
+        "70f50eee-f9d8-46b1-8da6-1c2a4694774b": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {}
+        }
+      }
+    },
+    "globalIdentity": {
+      "pageUrl": "https://devportal.development.dev/sites/team/",
+      "customActions": {
+        "aacd276c-a2a3-4443-af63-976f33f69d4c": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {}
+        }
+      }
+    },
+    "scrollToSection": {
+      "pageUrl": "https://devportal.development.dev/sites/team/",
+      "customActions": {
+        "f9a7ad4c-8cd4-4f08-bb25-4c77b9fb3dfe": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    },
+    "homePageScrollDownButton": {
+      "pageUrl": "https://devportal.development.dev/sites/team/",
+      "customActions": {
+        "429d87b0-baa6-4fd3-9f3c-9d6f3c8ca155": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  }
+}

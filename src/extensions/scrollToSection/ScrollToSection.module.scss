@@ -1,0 +1,45 @@
+.bceDesignSystemScrollToSection{
+    display: inherit;
+    padding-top: 20px;
+    button{
+        padding-right: 30px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.externalLinksIcon{
+    font-size: 16px;
+    line-height: 24px;
+    overflow-wrap: break-word;
+    display: contents;
+    button{
+        height: auto;
+        width: auto;
+        padding: 0px;
+        margin: 0px;
+        [class*="ms-Button-flexContainer"]{
+            height: auto;
+            width: auto;
+            padding: 0px;
+            margin: 0px;
+            i{
+                margin: 0px;
+            }
+        }
+    }
+}
+
+[class*="webPartContainer_"]{
+    [class*="content"]{
+        display: block;
+        span{
+            float: left;
+        }
+    }
+    [id="bce-scroll-to-section"]{
+        float: left;
+        padding-bottom: 5px;
+        padding-top: 30px;
+    }
+}

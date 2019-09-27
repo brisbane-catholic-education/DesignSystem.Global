@@ -1,0 +1,63 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "branding-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/branding/BrandingApplicationCustomizer.js",
+          "manifest": "./src/extensions/branding/BrandingApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "global-footer-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/globalFooter/GlobalFooterApplicationCustomizer.js",
+          "manifest": "./src/extensions/globalFooter/GlobalFooterApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "global-identity-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/globalIdentity/GlobalIdentityApplicationCustomizer.js",
+          "manifest": "./src/extensions/globalIdentity/GlobalIdentityApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "scroll-to-section-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/scrollToSection/ScrollToSectionApplicationCustomizer.js",
+          "manifest": "./src/extensions/scrollToSection/ScrollToSectionApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "page-title-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/pageTitle/PageTitleApplicationCustomizer.js",
+          "manifest": "./src/extensions/pageTitle/PageTitleApplicationCustomizer.manifest.json"
+        }
+      ]
+    },
+    "home-page-scroll-down-button-application-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/homePageScrollDownButton/HomePageScrollDownButtonApplicationCustomizer.js",
+          "manifest": "./src/extensions/homePageScrollDownButton/HomePageScrollDownButtonApplicationCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "BrandingApplicationCustomizerStrings": "lib/extensions/branding/loc/{locale}.js",
+    "GlobalFooterApplicationCustomizerStrings": "lib/extensions/globalFooter/loc/{locale}.js",
+    "GlobalIdentityApplicationCustomizerStrings": "lib/extensions/globalIdentity/loc/{locale}.js",
+    "ScrollToSectionApplicationCustomizerStrings": "lib/extensions/scrollToSection/loc/{locale}.js",
+    "PageTitleApplicationCustomizerStrings": "lib/extensions/pageTitle/loc/{locale}.js",
+    "HomePageScrollDownButtonApplicationCustomizerStrings": "lib/extensions/homePageScrollDownButton/loc/{locale}.js",
+  }
+}

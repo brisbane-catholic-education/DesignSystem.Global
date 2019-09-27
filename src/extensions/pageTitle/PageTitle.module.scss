@@ -1,0 +1,23 @@
+@import '~office-ui-fabric-react/dist/sass/_References.scss';
+
+.bceDesignSystemPageParentTitle{
+    text-transform: uppercase;
+    color: #054166!important;
+    font-weight: 600;
+}
+
+[class='ms-compositeHeader']{
+    display: none;
+}
+
+[data-automation-id="pageHeader"]{
+    [class*="content"]{
+        display: block;
+        span{
+            float: left;
+        }
+    }
+    [id="bce-parent-title"]{
+        float: left;
+    }
+}

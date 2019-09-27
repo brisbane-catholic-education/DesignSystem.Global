@@ -1,0 +1,2127 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
+@import '~office-ui-fabric-react/dist/sass/_References.scss';
+$bce-design-system-color-darkBlue: #054166;
+$bce-design-system-color-lightBlue: #0979BE;
+$bce-design-system-color-white: #ffffff;
+$bce-design-system-color-black: #000000;
+$bce-design-system-color-purple: #8857a4;
+$bce-design-system-color-orange: #fd770b;
+$bce-design-system-color-red: #ef404a;
+$bce-design-system-color-rose: #ffb4e5;
+$bce-design-system-color-green: #00ae4d;
+$bce-design-system-color-gold: #ffcb05;
+$bce-design-system-color-lightGray: #d3d3d3;
+$bce-design-system-color-darkGray: #979593;
+$bce-design-system-color-gray20: #f3f2f1;
+$bce-design-system-color-gray30: #edebe9;
+$bce-design-system-color-gray40:#e1dfdd;
+$bce-design-system-fontSize-su-plus: 54px;
+$bce-design-system-fontSize-su: 42px;
+$bce-design-system-fontSize-xxl-plus: 34px;
+$bce-design-system-fontSize-xxl: 28px;
+$bce-design-system-fontSize-xl-plus: 24px;
+$bce-design-system-fontSize-xl: 20px;
+$bce-design-system-fontSize-l: 18px;
+$bce-design-system-fontSize-m-plus: 16px;
+$bce-design-system-fontSize-m: 14px;
+$bce-design-system-fontSize-s-plus: 13px;
+$bce-design-system-fontSize-s: 12px;
+$bce-design-system-fontSize-xs: 11px;
+$bce-design-system-fontSize-mi: 10px;
+$bce-design-system-fontWeight-xb: 800;
+$bce-design-system-fontWeight-b: 700;
+$bce-design-system-fontWeight-m: 600;
+$bce-design-system-fontWeight-r: 500;
+$bce-design-system-fontWeight-n: 400;
+$bce-design-system-fontWeight-l: 300;
+$bce-design-system-lineHeight-n: 1.5;
+$bce-design-system-gutter-l: 32px;
+$bce-design-system-gutter-m: 20px;
+$bce-design-system-gutter-s: 16px;
+$bce-design-system-size-pixel: 1px;
+$bce-design-system-containerWidth: 1204px;
+
+:global {
+  body {
+    background-color: white !important;
+  }
+
+  p,
+  span,
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  li,
+  strong,
+  b,
+  [class*="ms-Fabric"] {
+    font-family: Raleway, Helvetica, Arial, serif !important;
+  }
+
+  p,
+  span,
+  strong,
+  b,
+  li {
+    font-size: $bce-design-system-fontSize-m-plus;
+    line-height: 24px;
+    color: #000000;
+  }
+
+  li {
+    margin-bottom: 22px;
+  }
+
+  p {
+    margin-top: 10px;
+    margin-bottom: 22px;
+  }
+
+  a {
+    color: $bce-design-system-color-lightBlue !important;
+    overflow-wrap: break-word;
+
+    &:visited {
+      color: $bce-design-system-color-purple !important;
+    }
+
+    &:hover {
+      color: $bce-design-system-color-darkBlue !important;
+    }
+
+    &:focus {
+      border: 1px solid #979797;
+      padding: 5px;
+    }
+
+    &:focus-within {
+      border: 1px solid #979797;
+      padding: 5px;
+    }
+
+    &:active {
+      color: $bce-design-system-color-darkBlue !important;
+    }
+
+    .is-disabled {
+      color: #979797 !important;
+    }
+
+    &:link {
+      text-decoration: underline;
+    }
+  }
+
+  a.ms-Button,
+  a.ms-Button--default,
+  a.ms-Button--compoundPrimary {
+    &:link {
+      text-decoration: none;
+    }
+
+    i[data-icon-name="NavigateExternalInline"] {
+      color: white;
+    }
+
+    color: $bce-design-system-color-lightBlue !important;
+
+    .ms-Button--default {
+      font-weight: $bce-design-system-fontWeight-r;
+    }
+
+    &:hover {
+      color: $bce-design-system-color-darkBlue !important;
+    }
+  }
+
+  .ms-FocusZone {
+    .ms-Overlay {
+      background-color: black !important;
+      opacity: 0.2 !important;
+    }
+  }
+
+  .SPCanvas {
+    h3 {
+      font-size: $bce-design-system-fontSize-xl-plus;
+      line-height: (4/3);
+      margin: 0;
+      margin-top: (4/3) * 1em;
+      color: $bce-design-system-color-darkBlue;
+      font-weight: $ms-font-weight-bold;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .ms-FocusZone .ms-Nav {
+    overflow-y: auto !important;
+  }
+
+  .SPPageChrome-app .commandBarWrapper {
+    display: none;
+  }
+
+  #SuiteNavPlaceHolder {
+    background: $bce-design-system-color-darkBlue;
+    display: none !important;
+
+    #O365_NavHeader {
+      background: $bce-design-system-color-darkBlue;
+    }
+
+    #O365_TopMenu {
+
+      .ms-Icon,
+      .o365button span {
+        color: white !important;
+      }
+
+      .o365cs-nav-rightMenus {
+        vertical-align: middle;
+
+        .o365cs-nav-topItem {
+          border: none;
+        }
+
+        @media screen and (min-width: $ms-screen-min-lg) {
+          height: 50px;
+        }
+
+        @media screen and (max-width: $ms-screen-max-lg) {
+          height: 96px;
+        }
+      }
+    }
+
+  }
+
+  .SPPageChrome-app .ms-CommandBar .ms-CommandBarItem-commandText {
+    padding: 8px 4px !important;
+    color: #000000;
+  }
+
+  .o365cs-navMenuButton {
+    background: $bce-design-system-color-darkBlue !important;
+
+    .ms-Icon--GlobalNavButton {
+      color: white;
+    }
+
+    &:hover {
+      background: $bce-design-system-color-lightBlue !important;
+    }
+  }
+
+  .container {
+    max-width: $bce-design-system-containerWidth;
+  }
+
+  .CanvasZoneContainer {
+    background: white;
+
+    .CanvasZone {
+      padding-left: 16px;
+      padding-right: 16px;
+
+      .CanvasSection {
+        max-width: $bce-design-system-containerWidth;
+
+        .bce-design-system-section,
+        .bce-design-system-row {
+          padding-top: 24px;
+          padding-bottom: 24px;
+          max-width: $bce-design-system-containerWidth;
+        }
+
+        .ControlZoneEmphasisBackground {
+          padding-left: 0px;
+        }
+      }
+    }
+
+    @media screen and (max-width: $ms-screen-max-sm) {
+      .CanvasZone {
+        padding-left: 4px;
+        padding-right: 4px;
+      }
+    }
+  }
+
+  .bce-design-system-border {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .bce-design-system-border-bottom {
+    border-bottom: 1px solid #979797;
+    margin-bottom: $bce-design-system-fontSize-xl !important;
+    padding-bottom: 24px;
+    width: 100%;
+    float: left;
+  }
+
+  .bce-design-system-box {
+    border: 1px solid #979797;
+    padding-top: 47px;
+    padding-bottom: 47px;
+    padding-left: 103px;
+    padding-right: 103px;
+    clear: both;
+
+    @media screen and (max-width: $ms-screen-max-lg) {
+      padding: 25px;
+    }
+
+    @media screen and (max-width: $ms-screen-max-md) {
+      margin-top: 16px;
+      padding: 22px;
+      margin-bottom: 24px;
+    }
+
+    @media screen and (max-width: $ms-screen-max-sm) {
+      padding: 19px;
+      margin-bottom: 8px;
+      margin-top: 16px;
+    }
+  }
+
+  .bce-design-system-box-sm {
+    border: 1px solid #979797;
+    padding-top: 23px;
+    padding-bottom: 23px;
+    padding-left: 29px;
+    padding-right: 29px;
+    clear: both;
+
+    @media screen and (max-width: $ms-screen-max-md) {
+      margin-top: 16px;
+      padding: 22px;
+    }
+
+    @media screen and (max-width: $ms-screen-max-sm) {
+      padding: 19px;
+      margin-top: 16px;
+    }
+  }
+
+  .SPPageChrome-app {
+    .ms-CommandBar {
+      .ms-CommandBarItem-icon {
+        color: $bce-design-system-color-lightBlue !important;
+      }
+    }
+  }
+
+  /* -- Left Nav--*/
+  nav[role="navigation"] {
+    .ms-Nav-link {
+      &::after {
+        border-left: 3px solid #0979BE;
+      }
+    }
+  }
+
+  /* grid --*/
+  .ms-Grid {
+    .ms-Grid-row {
+      margin: 0px;
+    }
+
+    .ms-Grid-col {
+      padding-left: 0px;
+
+      @media screen and (min-width: $ms-screen-min-sm) {
+        padding-right: 16px
+      }
+
+      @media screen and (min-width: $ms-screen-min-md) {
+        padding-right: 16px
+      }
+
+      @media screen and (min-width: $ms-screen-min-lg) {
+        padding-right: 24px
+      }
+
+      @media screen and (min-width: $ms-screen-min-xl) {
+        padding-right: 24px
+      }
+
+      @media screen and (min-width: $ms-screen-min-xxl) {
+        padding-right: 32px
+      }
+    }
+  }
+
+  /* -- Table Starts --*/
+  .bce-design-system-table {
+    border-collapse: collapse;
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      font-weight: 500;
+    }
+  }
+
+  .bce-design-system-table-borderless {
+    border-collapse: collapse;
+
+    td,
+    th {
+      border-bottom: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      font-weight: $bce-design-system-fontWeight-r;
+    }
+  }
+
+  /* -- Table Ends --*/
+  /* --Contents Paragraphs Headings Starts--*/
+  .bce-design-system-p-l {
+    font-size: $bce-design-system-fontSize-xl-plus;
+    font-weight: $bce-design-system-fontWeight-n;
+    line-height: 32px;
+    color: $bce-design-system-color-black;
+  }
+
+  .bce-design-system-p-strong {
+    font-size: $bce-design-system-fontSize-m;
+    font-weight: $bce-design-system-fontWeight-b;
+    color: $bce-design-system-color-darkBlue;
+  }
+
+  .bce-design-system-p-strong-black {
+    font-size: $bce-design-system-fontSize-m;
+    font-weight: $bce-design-system-fontWeight-b !important;
+    color: $bce-design-system-color-black;
+  }
+
+  .bce-design-system-pageHeading {
+    font-size: $bce-design-system-fontSize-su;
+    font-weight: $bce-design-system-fontWeight-b;
+    color: $bce-design-system-color-darkBlue !important;
+    width: 100%;
+    float: left;
+    max-width: 100% !important;
+    line-height: 50px;
+    padding-bottom: 32px;
+    padding-top: 32px;
+  }
+
+  .bce-design-system-sectionHeading {
+    font-size: $bce-design-system-fontSize-xxl-plus;
+    font-weight: $bce-design-system-fontWeight-b;
+    color: $bce-design-system-color-darkBlue !important;
+    padding-bottom: $bce-design-system-fontSize-xl;
+    width: 100%;
+    max-width: 100% !important;
+    float: left;
+    line-height: 42px;
+  }
+
+  .bce-design-system-sectionTitle {
+    font-size: $bce-design-system-fontSize-xl-plus;
+    font-weight: $bce-design-system-fontWeight-b;
+    color: $bce-design-system-color-darkBlue !important;
+    float: left;
+    width: 100%;
+    max-width: 100% !important;
+    padding-bottom: 24px;
+    line-height: 32px;
+  }
+
+  .bce-design-system-subsectionTitle {
+    font-size: $bce-design-system-fontSize-xl;
+    font-weight: $bce-design-system-fontWeight-b;
+    color: $bce-design-system-color-darkBlue !important;
+    padding-bottom: $bce-design-system-fontSize-xl;
+    line-height: 28px;
+    width: 100%;
+    max-width: 100% !important;
+    float: left;
+    margin-top: 24px;
+    padding-bottom: 8px;
+  }
+
+  .bce-design-system-subsectionTitle2 {
+    font-size: $bce-design-system-fontSize-m-plus;
+    font-weight: $bce-design-system-fontWeight-b;
+    color: $bce-design-system-color-darkBlue !important;
+    padding-bottom: 8px;
+    width: 100%;
+    max-width: 100% !important;
+    float: left;
+    line-height: 24px;
+    margin-top: 10px;
+  }
+
+  /* --Contents Paragraph Headings Ends--*/
+
+  /*-- Persona Starts--*/
+  .bce-design-system-Persona--size12 {
+    .ms-TooltipHost {
+      font-size: 12px !important;
+    }
+  }
+
+  .bce-design-system-Persona--size14 {
+    .ms-TooltipHost {
+      font-size: 13px !important;
+    }
+  }
+
+  .bce-design-system-Persona--size56 {
+    .ms-TooltipHost {
+      font-size: 18px !important;
+    }
+  }
+
+  .bce-design-system-Persona--showSecondaryText {
+    .ms-Persona-secondaryText {
+      display: inline !important;
+    }
+  }
+
+  /* -- Fonts Starts --*/
+  .dark-navy {
+    color: $bce-design-system-color-darkBlue;
+  }
+
+  .light-blue {
+    color: $bce-design-system-color-lightBlue;
+  }
+
+  .white {
+    color: $bce-design-system-color-white;
+  }
+
+  .black {
+    color: $bce-design-system-color-black;
+  }
+
+  .purple {
+    color: $bce-design-system-color-purple;
+  }
+
+  .orange {
+    color: $bce-design-system-color-orange;
+  }
+
+  .red {
+    color: $bce-design-system-color-red;
+  }
+
+  .rose {
+    color: $bce-design-system-color-rose;
+  }
+
+  .green {
+    color: $bce-design-system-color-green;
+  }
+
+  .gold {
+    color: $bce-design-system-color-gold;
+  }
+
+  .light-gray {
+    color: $bce-design-system-color-lightGray;
+  }
+
+  .dark-gray {
+    color: $bce-design-system-color-darkGray;
+  }
+
+  .background-light-gray {
+    background-color: $bce-design-system-color-lightGray;
+  }
+
+  .background-dark-gray {
+    background-color: $bce-design-system-color-darkGray;
+  }
+
+  .background-dark-navy {
+    background-color: $bce-design-system-color-darkBlue;
+  }
+
+  .background-light-blue {
+    background-color: $bce-design-system-color-lightBlue;
+  }
+
+  .background-white {
+    background-color: $bce-design-system-color-white;
+  }
+
+  .background-black {
+    background-color: $bce-design-system-color-black;
+  }
+
+  .background-purple {
+    background-color: $bce-design-system-color-purple;
+  }
+
+  .background-orange {
+    background-color: $bce-design-system-color-orange;
+  }
+
+  .background-red {
+    background-color: $bce-design-system-color-red;
+  }
+
+  .background-rose {
+    background-color: $bce-design-system-color-rose;
+  }
+
+  .background-green {
+    background-color: $bce-design-system-color-green;
+  }
+
+  .background-gold {
+    background-color: $bce-design-system-color-gold;
+  }
+
+  .Italic {
+    font-style: italic;
+  }
+
+  .Extrabold {
+    font-weight: $bce-design-system-fontWeight-xb;
+  }
+
+  .Bold {
+    font-weight: $bce-design-system-fontWeight-b;
+  }
+
+  .Medium {
+    font-weight: $bce-design-system-fontWeight-m;
+  }
+
+  .Normal {
+    font-weight: $bce-design-system-fontWeight-n;
+  }
+
+  .Regular {
+    font-weight: $bce-design-system-fontWeight-r;
+  }
+
+  .mi {
+    font-size: $bce-design-system-fontSize-mi;
+    line-height: 18px;
+  }
+
+  .xs {
+    font-size: $bce-design-system-fontSize-xs;
+    line-height: 19px;
+  }
+
+  .s {
+    font-size: $bce-design-system-fontSize-s;
+    line-height: 20px;
+  }
+
+  .s-plus {
+    font-size: $bce-design-system-fontSize-s-plus;
+    line-height: 21px;
+  }
+
+  .m {
+    font-size: $bce-design-system-fontSize-m;
+    line-height: 22px;
+  }
+
+  .m-plus {
+    font-size: $bce-design-system-fontSize-m-plus;
+    line-height: 24px;
+  }
+
+  .l {
+    font-size: $bce-design-system-fontSize-l;
+    line-height: 26px;
+  }
+
+  .xl {
+    font-size: $bce-design-system-fontSize-xl;
+    line-height: 28px;
+  }
+
+  .xl-plus {
+    font-size: $bce-design-system-fontSize-xl-plus;
+    line-height: 32px;
+  }
+
+  .xxl {
+    font-size: $bce-design-system-fontSize-xxl;
+    line-height: 36px;
+  }
+
+  .xxl-plus {
+    font-size: $bce-design-system-fontSize-xxl-plus;
+    line-height: 42px;
+  }
+
+  .su {
+    font-size: $bce-design-system-fontSize-su;
+    line-height: 50px;
+  }
+
+  .su-plus {
+    font-size: $bce-design-system-fontSize-su-plus;
+    line-height: 64px;
+  }
+
+
+  /* -- Fonts Ends --*/
+
+  /* -- MessageBar Starts --*/
+  .ms-MessageBar-innerText {
+    span {
+      font-size: 12px;
+    }
+  }
+
+  .ms-MessageBar-icon {
+    i {
+      margin-top: 3px;
+    }
+  }
+
+
+  /* -- Overflow Set Starts--*/
+  [role="menubar"] {
+    .ms-OverflowSet-item {
+
+      button,
+      i {
+        color: $bce-design-system-color-lightBlue;
+      }
+    }
+  }
+
+  /* -- Overflow Set Ends--*/
+
+  /* -- Nav Starts--*/
+  [role="navigation"] {
+
+    .ms-Nav-linkText,
+    .ms-Button-icon {
+      color: $bce-design-system-color-black;
+    }
+  }
+
+  /* -- Nav Ends--*/
+
+  /*-- Text Field Starts --*/
+
+  .ms-TextField[class*="rootIsDisabled"] {
+    .ms-TextField-fieldGroup {
+      background: #c8c8c8;
+    }
+  }
+
+  .ms-TextField {
+    .ms-TextField-errorMessage {
+      span {
+        font-size: 12px;
+        line-height: 20px;
+      }
+
+      padding-top: 8px;
+    }
+
+    .ms-TextField-description {
+      .ms-Label {
+        line-height: 22px;
+        color: #000000;
+        padding-bottom: 4px;
+      }
+
+      button {
+        width: 15px;
+        height: 15px;
+      }
+
+      color: #054166 !important;
+      font-size: 12px;
+      margin-top: 5px;
+      line-height: 20px;
+
+      .ms-Spinner {
+        margin-top: 4px;
+        margin-right: 5px;
+        float: left;
+        color: #054166;
+      }
+    }
+  }
+
+  [class*="ms-TextField--underlined"] {
+    [class*="ms-TextField-wrapper"] {
+      background: $bce-design-system-color-white;
+    }
+
+    input[class*="ms-TextField-field"] {
+      &:focus {
+        border-bottom: none;
+      }
+    }
+
+    :focus {
+      border-bottom: 1px solid $bce-design-system-color-lightBlue;
+    }
+
+    :focus-within {
+      border-bottom: 1px solid $bce-design-system-color-lightBlue;
+    }
+  }
+
+  [class*="ms-TextField--borderless"] {
+    &[class*="rootIsActive_"] {
+      [class*="fieldGroupIsFocused"] {
+        input {
+          background-color: $bce-design-system-color-white;
+        }
+      }
+    }
+
+    [class*="ms-Label"] {
+      font-weight: $bce-design-system-fontWeight-b;
+      line-height: 22px;
+    }
+
+    div[class*="ms-TextField-fieldGroup"] {
+      background: transparent;
+    }
+
+    input[class*="ms-TextField-field"] {
+      padding-left: 0px;
+      background: transparent;
+
+      &:hover {
+        border-bottom: 1px solid $bce-design-system-color-black;
+      }
+    }
+  }
+
+  /*-- Text Field Ends --*/
+
+  /* -- Checkbox Starts --*/
+  [role="checkbox"] {
+    &.is-disabled.is-checked {
+      .ms-Checkbox-checkbox {
+        background: #c8c8c8 !important;
+        border-color: #c8c8c8 !important;
+      }
+    }
+
+    &.is-disabled {
+      .ms-Checkbox-checkbox {
+        border-color: lightgray !important;
+      }
+    }
+
+    &.is-checked.is-enabled {
+      .ms-Checkbox-checkbox {
+        background: $bce-design-system-color-lightBlue;
+        border-color: $bce-design-system-color-lightBlue;
+      }
+
+      &:hover {
+        .ms-Checkbox-checkbox {
+          background: $bce-design-system-color-darkBlue;
+          border-color: $bce-design-system-color-darkBlue;
+        }
+      }
+    }
+
+    &:focus {
+      border: 1px solid rgb(102, 102, 102);
+      padding: 2px;
+      padding-right: 5px;
+    }
+
+    .ms-Checkbox-checkbox {
+      [data-icon-name="CheckMark"] {
+        color: #a6a6a6;
+      }
+
+      :hover {
+        opacity: 1;
+        color: lightgray;
+      }
+    }
+  }
+
+  .ms-Checkbox.is-checked {
+    [data-icon-name="CheckMark"] {
+      color: white;
+    }
+  }
+
+  /* -- Checkbox Ends --*/
+
+  /*-- Choice Fileds Starts -- */
+
+  .ms-ChoiceField {
+    &:focus {
+      .ms-ChoiceField-wrapper {
+        border: 1px solid rgb(102, 102, 102);
+        padding: 2px;
+        padding-right: 3px;
+      }
+    }
+  }
+
+  .ms-ChoiceField-field.is-disabled.is-checked {
+    &::before {
+      border: 1px solid #c8c8c8;
+    }
+
+    &::after {
+      border: 5px solid #c8c8c8;
+    }
+  }
+
+  .ms-ChoiceField-field.is-disabled {
+    &::before {
+      border: 1px solid #c8c8c8;
+    }
+  }
+
+  .ms-ChoiceField-wrapper {
+    &:focus {
+      border: 1px solid rgb(102, 102, 102);
+      padding: 2px;
+      padding-right: 3px;
+    }
+
+    &:hover {
+      .ms-ChoiceField-field {
+        &::before {
+          border: 1px solid #666666;
+        }
+
+        &::after {
+          border: 5px solid #a6a6a6;
+          top: 5px;
+          left: 5px;
+        }
+      }
+
+      .ms-ChoiceField-field.is-disabled {
+        &::before {
+          border: 1px solid #c8c8c8;
+        }
+
+        &::after {
+          border: none;
+        }
+      }
+
+      [class*="fieldIsChecked"] {
+        &::before {
+          border: 1px solid $bce-design-system-color-darkBlue !important;
+        }
+
+        &::after {
+          border: 5px solid $bce-design-system-color-darkBlue !important;
+        }
+      }
+    }
+
+    [class*="fieldIsDisabled"] {
+      &::before {
+        background-color: white !important;
+      }
+    }
+
+    [class*="fieldIsChecked"] {
+      &::before {
+        border: 1px solid $bce-design-system-color-lightBlue !important;
+      }
+
+      &::after {
+        border: 5px solid $bce-design-system-color-lightBlue !important;
+      }
+    }
+
+    [class*="fieldIsDisabled"][class*="fieldIsChecked"] {
+      &::before {
+        border: 1px solid #a6a6a6 !important;
+      }
+
+      &::after {
+        border: 5px solid #a6a6a6 !important;
+      }
+    }
+  }
+
+  /*-- Choice Fileds ends -- */
+
+  /* -- Detail List Starts --*/
+  .ms-DetailsList {
+    [role="gridcell"] {
+      img {
+        width: 14px;
+        height: 18px;
+      }
+    }
+
+    .ms-DetailsRow-cellCheck,
+    [role="rowheader"] {
+      &:hover {
+        border: 1px solid #666666;
+      }
+
+      &:focus {
+        border: 1px solid #666666;
+      }
+
+      &:focus-within {
+        border: 1px solid #666666;
+      }
+    }
+
+    [role="rowheader"] {
+
+      font-size: 14px;
+      line-height: 22px;
+      color: #000000;
+
+      span {
+        font-size: 14px;
+        line-height: 22px;
+        color: #000000;
+      }
+    }
+
+    [role="gridcell"] {
+      font-size: 12px;
+      line-height: 20px;
+      color: #333333;
+
+      span {
+        font-size: 12px;
+        line-height: 20px;
+        color: #333333;
+      }
+
+      i.ms-Check-circle,
+      i.ms-Check-check {
+        color: #666666;
+      }
+
+      .is-checked {
+
+        i.ms-Check-circle,
+        i.ms-Check-check {
+          color: white;
+        }
+      }
+    }
+
+    .ms-DetailsHeader-cellName {
+      font-size: 14px;
+      line-height: 22px;
+      color: #000000;
+    }
+
+    .is-checked::before {
+      background: $bce-design-system-color-lightBlue;
+    }
+
+    [class*="isRowHeader"] {
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:focus-within {
+        border: 1px solid $bce-design-system-color-lightGray;
+      }
+    }
+
+    [class*="rootIsSelected_"] {
+      background: #eaeaea;
+      border: none !important;
+
+      &:hover {
+        background: #dadada;
+      }
+    }
+
+    .ms-DetailsRow {
+      &:hover {
+        border: 1px solid #666666;
+      }
+
+      &:focus-within {
+        border: 1px solid $bce-design-system-color-lightGray;
+      }
+    }
+  }
+
+  /* -- Detail List Ends --*/
+
+  /*-- Callout Starts --*/
+  .ms-ContextualMenu {
+    .ms-ContextualMenu-list.is-open {
+      .ms-ContextualMenu-item {
+        margin: 5px;
+      }
+    }
+  }
+
+  .ms-Callout {
+
+    i,
+    .ms-ContextualMenu-itemText {
+      color: $bce-design-system-color-lightBlue;
+    }
+  }
+
+  .bce-design-system-callout-default {
+    .bce-design-system-callout-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+
+      i {
+        color: #666666;
+        font-size: 12px;
+        line-height: 13px;
+      }
+    }
+
+    .bce-design-system-callout-container {
+      padding-left: 39px;
+      padding-top: 16px;
+      padding-right: 28px;
+      padding-bottom: 14px;
+
+      .bce-design-system-callout-header {
+        .bce-design-system-callout-title {
+          font-size: $bce-design-system-fontSize-xl;
+          line-height: 28px;
+        }
+      }
+
+      .bce-design-system-callout-inner {
+        .bce-design-system-callout-content {
+          .bce-design-system-callout-subText {
+            font-size: $bce-design-system-fontSize-s;
+          }
+        }
+      }
+
+      .bce-design-system-callout-actions {
+        a {
+          font-size: $bce-design-system-fontSize-m;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+
+  .bce-design-system-callout-multiLine {
+    .ms-Callout-main {
+      .bce-design-system-callout-close {
+        position: absolute;
+        top: 8px;
+        right: 0px;
+
+        i {
+          color: #666666;
+          font-size: 12px;
+          line-height: 6px;
+        }
+      }
+
+      .bce-design-system-callout-container {
+        padding-left: 10px;
+        padding-top: 6px;
+        padding-right: 10px;
+        padding-bottom: 6px;
+        line-height: 20px;
+
+        p,
+        span {
+          font-size: $bce-design-system-fontSize-s;
+          line-height: 20px;
+          vertical-align: text-top;
+        }
+      }
+    }
+  }
+
+  .bce-design-system-callout-singleLine {
+    .ms-Callout-main {
+      overflow: hidden;
+
+      .bce-design-system-callout-close {
+        position: absolute;
+        top: 8px;
+        right: 4px;
+
+        i {
+          color: #666666;
+          font-size: 12px;
+          line-height: 18px;
+        }
+      }
+
+      .bce-design-system-callout-container {
+        padding-left: 10px;
+        padding-top: 6px;
+        padding-right: 10px;
+        padding-bottom: 6px;
+        line-height: 30px;
+
+        p,
+        span {
+          font-size: $bce-design-system-fontSize-s;
+          line-height: 20px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          display: inline-block;
+          overflow: hidden;
+          vertical-align: text-top;
+        }
+      }
+    }
+  }
+
+  /*-- Callout Ends --*/
+
+  /*-- Pviot Starts--*/
+
+  .bce-design-system-pviot {
+    display: inline-block;
+
+    .ms-Pivot {
+      .ms-Pivot-link.is-selected {
+        &::before {
+          border-bottom: 2px solid #0979BE;
+        }
+      }
+    }
+
+    [role="tabpanel"] {
+      margin-top: 20px;
+    }
+
+    .ms-Pivot[class*="rootIsTabs_"] {
+      .ms-Pivot-link {
+        &:active {
+          background: #054166;
+        }
+      }
+
+      .ms-Pivot-link.is-selected {
+        background: #0979BE;
+        color: white;
+      }
+    }
+  }
+
+  /*-- Pviot Ends--*/
+
+  /* -- Search Box --*/
+  .ms-SearchBox {
+    &:focus {
+      border: 1px solid #0979BE !important;
+    }
+
+    &:focus-within {
+      border: 1px solid #0979BE !important;
+    }
+
+    .ms-SearchBox-field {
+      font-family: Raleway, Helvetica, Arial, serif !important;
+      color: #000000;
+    }
+
+    .ms-SearchBox-iconContainer {
+      i {
+        color: #0979BE;
+      }
+    }
+  }
+
+  .ms-SearchBox.is-underlined {
+    &:focus {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #0979BE !important;
+    }
+
+    &:focus-within {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 1px solid #0979BE !important;
+    }
+  }
+
+  .ms-SearchBox.is-disabled.is-underlined {
+    .ms-SearchBox-iconContainer {
+      background: #f4f4f4;
+    }
+  }
+
+  /*-- Buttons --*/
+  .bce-design-system-buttom {
+    margin-right: 16px !important;
+    border: 1px solid rgba(151, 151, 151, 0.2);
+    background-color: #fbfbfb;
+    color: $bce-design-system-color-lightBlue !important;
+    padding-left: 16px !important;
+    padding-top: 15px !important;
+    padding-bottom: 11px !important;
+    height: 50px;
+    width: auto;
+
+    button {
+      padding-left: 8px;
+      padding-right: 0px;
+      width: auto;
+      color: #000000 !important;
+
+      i {
+        color: #000000 !important;
+      }
+    }
+  }
+
+  .ms-Button--compound,
+  .ms-Button--compoundPrimary {
+    padding: 20px !important;
+
+    .ms-Button-textContainer {
+      .ms-Button-label {
+        font-weight: $bce-design-system-fontWeight-b;
+        line-height: 22px;
+        margin-bottom: 0px;
+      }
+
+      .ms-Button-description {
+        font-family: Raleway, Helvetica, Arial, serif !important;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .ms-Button--compound {
+    .ms-Button-description {
+      color: #000000;
+    }
+  }
+
+  .ms-Button--default,
+  .ms-Button--compound {
+    margin-right: 8px;
+    margin-bottom: 8px;
+    padding: 8px;
+
+    .ms-Button-icon {
+      padding-right: 8px;
+      margin-right: 0px;
+      font-size: 16px;
+      line-height: 14px;
+    }
+
+    .ms-Button-label {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+
+    &:hover {
+      color: black !important;
+      background-color: rgb(234, 234, 234);
+    }
+
+    &:focus {
+      border: 1px solid #605d59 !important;
+      color: black !important;
+    }
+
+    &:focus-within {
+      border: 1px solid #605d59 !important;
+      color: black !important;
+    }
+
+    &.is-disabled {
+      background-color: #faf9f8 !important;
+      color: #979593 !important;
+    }
+
+    color: black !important;
+  }
+
+  .ms-Button {
+    [class*="ms-Button-label"] {
+      font-weight: $bce-design-system-fontWeight-n;
+    }
+
+    &--icon {
+      color: $bce-design-system-color-black;
+    }
+  }
+
+  .ms-Button--primary,
+  .ms-Button--compoundPrimary {
+    background-color: $bce-design-system-color-lightBlue !important;
+    border-color: $bce-design-system-color-lightBlue;
+    color: rgb(255, 255, 255) !important;
+
+    &:hover {
+      background-color: #1072ae !important;
+      color: rgb(255, 255, 255);
+
+      [class*="ms-Button-label"] {
+        font-weight: $bce-design-system-fontWeight-n;
+        color: white !important;
+      }
+    }
+
+    &:focus {
+      border: 1px solid #605d59;
+      color: white !important;
+      background: #1072ae !important;
+
+      [class*="ms-Button-label"] {
+        font-weight: $bce-design-system-fontWeight-n;
+        color: white !important;
+      }
+    }
+
+    &:focus-within {
+      border: 1px solid #605d59;
+      color: white !important;
+      background: #1072ae !important;
+
+      [class*="ms-Button-label"] {
+        font-weight: $bce-design-system-fontWeight-n;
+        color: white !important;
+      }
+    }
+
+    &:visited {
+      background: #054166 !important;
+    }
+
+    &:active {
+      color: white !important;
+
+      [class*="ms-Button-label"] {
+        font-weight: $bce-design-system-fontWeight-n;
+        color: white !important;
+      }
+    }
+
+    &.is-disabled {
+      background-color: #f4f4f4 !important;
+      color: #a6a6a6 !important;
+      border: none !important;
+    }
+  }
+
+  [class*="rootIsActive_"],
+  [class*="fieldGroupIsFocused_"] {
+    border-color: $bce-design-system-color-lightBlue !important;
+  }
+
+  input:not([type]):focus,
+  input[type=email]:focus,
+  input[type=file]:focus,
+  input[type=password]:focus,
+  input[type=text]:focus,
+  select:focus,
+  textarea:focus {
+    border-color: $bce-design-system-color-lightBlue !important;
+  }
+
+  /* -- Top Heading Starts --*/
+  .ms-compositeHeader {
+    display: none;
+  }
+
+  [data-automation-id="pageHeader"] {
+    background-color: rgb(250, 249, 248);
+    border-bottom: 1px solid lightgray;
+    height: 257px;
+
+    .ms-Link {
+      color: #000000;
+    }
+
+    [role="heading"] {
+      color: $bce-design-system-color-darkBlue !important;
+      font-weight: $bce-design-system-fontWeight-b !important;
+      line-height: 50px;
+      padding-bottom: 20px;
+      font-size: 42px !important;
+      margin-top: 15px;
+    }
+
+    [class^="content_"],
+    [class^="container_"] {
+      padding-left: 32px !important;
+    }
+  }
+
+  /* -- Top Heading Ends --*/
+
+  /* -- Page Container Starts -- */
+
+  @media screen and (max-width: $ms-screen-max-lg) {
+    #SuiteNavPlaceHolder {
+      height: 96px !important;
+      background: $bce-design-system-color-darkBlue;
+
+      #O365_NavHeader {
+        background: $bce-design-system-color-darkBlue;
+        height: 96px !important;
+
+        .o365cs-rsp-m-hide {
+          margin-left: 20px;
+          border: 1px solid gray;
+        }
+      }
+
+      #O365_TopMenu {
+        display: none;
+      }
+    }
+
+    [class*="pageContainer_"] {
+      left: 0px !important;
+    }
+
+    .bce-design-system-section,
+    .bce-design-system-row {
+      max-width: 100% !important;
+    }
+
+    #SuiteNavPlaceHolder {
+      display: block !important;
+    }
+  }
+
+  /* -- Page Container Ends -- */
+
+  /* -- Dropdown Starts --*/
+  .ms-Dropdown-label {
+    padding-bottom: 4px;
+  }
+
+  .bce-design-system-dropdown-underline {
+    .ms-Dropdown-title {
+      padding-left: 0;
+      border: none;
+    }
+
+    [class*="titleIsError"] {
+      border-bottom: 1px solid #a80000;
+    }
+  }
+
+  .ms-Dropdown.bce-design-system-dropdown-underline.is-disabled {
+    .ms-Dropdown-title {
+      background-color: transparent;
+    }
+
+    &:hover {
+      .ms-Dropdown-title {
+        border: none;
+        padding-left: 0px;
+      }
+    }
+
+    &:active {
+      .ms-Dropdown-title {
+        border: none;
+        padding-left: 0px;
+      }
+    }
+
+    &:focus {
+      .ms-Dropdown-title {
+        border: none;
+        padding-left: 0px;
+      }
+    }
+  }
+
+  .ms-Dropdown.bce-design-system-dropdown-underline {
+    &:hover {
+      .ms-Dropdown-title {
+        border-bottom: 1px solid #000000;
+        padding-left: 12px;
+      }
+    }
+
+    &:active {
+      .ms-Dropdown-title {
+        border-bottom: 1px solid $bce-design-system-color-lightBlue;
+        padding-left: 12px;
+      }
+    }
+
+    &:focus {
+      .ms-Dropdown-title {
+        padding-left: 12px;
+        border-bottom: 1px solid $bce-design-system-color-lightBlue;
+      }
+    }
+  }
+
+  .ms-Dropdown {
+    &:active {
+      .ms-Dropdown-title {
+        border-color: $bce-design-system-color-lightBlue !important;
+      }
+    }
+
+    &:focus {
+      .ms-Dropdown-title {
+        border-color: $bce-design-system-color-lightBlue !important;
+      }
+    }
+  }
+
+  /* -- Dropdown Ends --*/
+
+  /*-- Breadcrumb Starts--*/
+  .bce-design-system-breadcrum-small {
+    .ms-TooltipHost {
+      font-size: 14px;
+      line-height: 22px;
+      color: #000000;
+    }
+
+    .ms-Breadcrumb-chevron {
+      font-size: 8px;
+    }
+  }
+
+  .bce-design-system-breadcrum-large {
+    .ms-TooltipHost {
+      font-size: 16px;
+      line-height: 24px;
+      color: #000000;
+    }
+
+    .ms-Breadcrumb-chevron {
+      font-size: 8px;
+    }
+  }
+
+  .bce-design-system-breadcrum-xxl {
+    .ms-TooltipHost {
+      font-size: 20px;
+      line-height: 40px;
+      vertical-align: middle;
+      color: #000000;
+    }
+
+    .ms-Breadcrumb-chevron {
+      font-size: 12px;
+      padding: 10px;
+    }
+
+    .ms-Button-flexContainer {
+      i {
+        font-size: 20px;
+      }
+    }
+
+    .ms-Breadcrumb-overflow {
+      height: 40px;
+      width: 50px;
+      float: left;
+    }
+
+    .ms-Breadcrumb-item {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  .ms-Breadcrumb-list {
+    li {
+      margin-top: 0px;
+    }
+
+    .ms-Breadcrumb-listItem {
+      .ms-Breadcrumb-item {
+        padding-top: 2px;
+        padding-bottom: 5px;
+
+        .ms-TooltipHost {
+          font-weight: $bce-design-system-fontWeight-r;
+        }
+      }
+
+      &:hover {
+        background: $bce-design-system-color-gray20;
+      }
+
+      &:focus {
+        border: 1px solid $bce-design-system-color-black;
+      }
+
+      &:focus-within {
+        border: 1px solid $bce-design-system-color-black;
+      }
+
+      &:active {
+        background: $bce-design-system-color-darkGray;
+      }
+
+      &:visited {
+        background: $bce-design-system-color-darkGray;
+      }
+
+      cursor: pointer;
+    }
+  }
+
+
+  .ms-Breadcrumb-overflow {
+    margin-bottom: 0px;
+
+    &:hover {
+      background: $bce-design-system-color-gray20;
+    }
+
+    &:focus {
+      border: 1px solid $bce-design-system-color-black;
+    }
+
+    &:focus-within {
+      border: 1px solid $bce-design-system-color-black;
+    }
+
+    &:active {
+      background: $bce-design-system-color-darkGray;
+    }
+
+    &:visited {
+      background: $bce-design-system-color-darkGray;
+    }
+
+    width:40px;
+    height: 40px;
+
+    .ms-Breadcrumb-overflowButton {
+      width: 40px;
+      height: 40px;
+
+      .ms-Button-icon {
+        font-size: 20px;
+      }
+    }
+  }
+
+  /*-- Breadcrumb Ends--*/
+
+  /* -- Side Nav Starts --*/
+  .ms-searchux-searchbox {
+    width: 241px;
+
+    >div {
+      width: 241px;
+    }
+  }
+
+  [class*="spNav_"] {
+    background-color: #054166;
+    border-width: 0 !important;
+
+    >[role="presentation"] {
+      overflow-x: hidden;
+    }
+
+    [class*="container_"] {
+      [class*="ms-searchux-searchbox"] {
+        display: none;
+      }
+    }
+
+    [class*="searchBox_active"] {
+      background: #f4f4f4;
+    }
+
+    [class*="searchBox_"] {
+      background: $bce-design-system-color-darkBlue;
+      //border-width: 0 1px 0px 0 !important;
+      width: 240px !important;
+
+      span,
+      h3 {
+        color: white;
+      }
+
+      h3 {
+        margin-top: 5px;
+      }
+    }
+
+    .ms-Nav-navItem {
+      a.ms-Button {
+        padding-left: 31px;
+
+        [role="presentation"] {
+          display: none;
+        }
+      }
+    }
+
+    [role="presentation"] {
+      background-color: $bce-design-system-color-darkBlue !important;
+    }
+
+    [role="navigation"] {
+      //width: 240px !important;
+      background-color: $bce-design-system-color-darkBlue !important;
+      overflow: hidden;
+      color: white;
+    }
+
+    .ms-Nav-chevronButton {
+      i {
+        color: white;
+      }
+    }
+
+    .ms-Nav-compositeLink {
+      background: $bce-design-system-color-darkBlue;
+
+      >button:nth-child(1) {
+        display: none;
+      }
+
+      >button:nth-child(2) {
+        padding-left: $bce-design-system-gutter-s;
+        padding-right: $bce-design-system-gutter-s;
+        border: none;
+
+        .ms-Icon-placeHolder {
+          display: none;
+        }
+      }
+
+      a:hover {
+        background: $bce-design-system-color-darkBlue;
+      }
+
+      button {
+        background: $bce-design-system-color-darkBlue;
+      }
+
+      :hover {
+        background: $bce-design-system-color-darkBlue;
+      }
+
+      .ms-Nav-navItems {
+        padding-left: 31px;
+      }
+    }
+
+    .ms-Nav-chevronButton {
+      background: $bce-design-system-color-darkBlue;
+      background-color: $bce-design-system-color-darkBlue !important;
+    }
+
+    .ms-Nav-link {
+      background: $bce-design-system-color-darkBlue;
+      background-color: $bce-design-system-color-darkBlue !important;
+    }
+
+    .ms-Nav-linkText {
+      color: white;
+      font-family: Raleway, Helvetica, Arial, serif !important;
+    }
+
+    .ms-Nav-navItem {
+      margin-top: 1em;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .is-selected {
+        a::after {
+          border-left: 2px solid white;
+        }
+      }
+    }
+
+    .ms-Nav-groupContent {
+      margin-top: 95px;
+
+      >.ms-Nav-navItems {
+        margin-bottom: 0;
+
+        >.ms-Nav-navItem {
+          >.ms-Nav-compositeLink {
+            .ms-Button {
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    button.ms-Nav-link {
+      height: auto;
+
+      .ms-Nav-linkText {
+        font-weight: $bce-design-system-fontWeight-b;
+        line-height: $bce-design-system-lineHeight-n;
+        margin: 0;
+      }
+    }
+
+    >.ms-FocusZone {
+      background-color: $bce-design-system-color-darkBlue;
+      >.ms-Nav {
+        width: 240px;
+        top: 0px!important;
+        .ms-Nav-group {
+          padding-top: 98px;
+          .ms-Nav-navItems {
+            >.ms-Nav-navItem {
+              .ms-Nav-compositeLink {
+                &[name='Edit'] {
+                  margin-top: 4em;
+                  margin-bottom: 2em;
+
+                  .ms-Button {
+                    border: none;
+                    padding-left: $bce-design-system-gutter-s;
+                    padding-right: $bce-design-system-gutter-s;
+                    line-height: $bce-design-system-lineHeight-n;
+                    height: auto;
+
+                    &-flexContainer {
+                      .ms-Nav-linkText {
+                        margin: 0;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .ms-Nav-navItems {
+              padding-left: $bce-design-system-gutter-s;
+              padding-right: $bce-design-system-gutter-s;
+              margin-top: 1em;
+
+              .ms-Button {
+                height: auto;
+                border: none;
+                padding: 0 0 0 13px;
+
+                &::after {
+                  width: 3px;
+                }
+
+                .ms-Button-flexContainer {
+                  height: auto;
+
+                  .ms-Nav-linkText {
+                    margin: 0;
+                    line-height: $bce-design-system-lineHeight-n;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (min-width: $ms-screen-min-xl) {
+      width: 240px !important;
+    }
+  }
+
+  /* -- Side Nav Ends --*/
+
+  /* -- Footer Starts --*/
+
+  /* -- Footer Ends --*/
+
+  /* -- blockquote --*/
+  blockquote.bce-design-system-blockquote-regular {
+    margin: 0 auto;
+    margin-top: 50px;
+    color: #054166;
+    line-height: 1.6;
+    position: relative;
+
+    p {
+      margin-left: 45px;
+      color: #881798;
+      padding-top: 10px;
+    }
+  }
+
+  blockquote.bce-design-system-blockquote-extraLarge {
+    margin: 0 auto;
+    color: #054166;
+    padding: 6.2em 30px 1.2em 75px;
+    line-height: 1.6;
+    position: relative;
+
+    p {
+      margin-left: 97px;
+      color: #8857a4;
+    }
+
+    p.bce-design-system-p-l {
+      margin-bottom: 0px;
+    }
+
+    h1 {
+      color: $bce-design-system-color-darkBlue;
+      margin-left: 97px;
+      font-size: 54px;
+      line-height: 62px;
+    }
+  }
+
+  blockquote.bce-design-system-blockquote-extraLarge::before {
+    font-family: Raleway, Helvetica, Arial, serif !important;
+    content: "\201C";
+    color: #8857a3;
+    font-size: 300px;
+    font-weight: 600;
+    position: absolute;
+    left: -5px;
+    top: 12px;
+  }
+
+
+  blockquote.bce-design-system-blockquote-regular::before {
+    font-family: Raleway, Helvetica, Arial, serif !important;
+    content: "\201C";
+    color: #8857a3;
+    font-size: 100px;
+    font-weight: 600;
+    position: absolute;
+    left: -15px;
+    top: -30px;
+  }
+
+  blockquote::after {
+    content: '';
+  }
+
+  /* -- blockquote ends--*/
+
+  /* -- Responsive Starts --*/
+  @media screen and (max-width: $ms-screen-max-md) {
+
+    li,
+    p {
+      margin-bottom: 8px;
+      margin-top: 4px;
+    }
+
+    .bce-design-system-border-bottom {
+      padding-bottom: 16px;
+      margin-bottom: 16px !important;
+    }
+
+    .bce-design-system-subsectionTitle {
+      margin-top: 16px;
+    }
+
+    .bce-design-system-section,
+    .bce-design-system-row {
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+    }
+
+    .SPPageChrome-app .ms-CommandBar .ms-CommandBarItem {
+      display: initial;
+    }
+  }
+
+  @media screen and (min-width: $ms-screen-min-xl) {
+    .leftMargin {
+      [class*="pageContainer_"] {
+        left: 240px !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: $ms-screen-max-sm) {
+
+    /*-- Page Heading Starts--*/
+    .spAppAndPropertyPanelContainer {
+
+      [data-automation-id=pageHeader] [class^=container_],
+      [data-automation-id=pageHeader] [class^=content_] {
+        padding-left: 20px !important;
+      }
+    }
+
+    /*-- Page Heading Ends--*/
+  }
+
+  @media screen and (max-width: $ms-screen-max-xl) {
+
+    /*-- Page Heading Starts--*/
+    #bce-parent-title {
+      display: none;
+    }
+
+    #ce-scroll-to-section,
+    .bce-design-system-row {
+      padding-top: 16px;
+    }
+
+    [data-automation-id="pageHeader"] {
+      height: auto !important;
+      background-color: white !important;
+      border-bottom: none !important;
+    }
+
+    .CanvasSection--read .ControlZone {
+      margin-top: 0;
+    }
+
+    [data-automation-id='pageHeader'] [role='heading'] {
+      padding-bottom: 0 !important;
+    }
+
+    [class*="bceDesignSystemScrollToSection_"] {
+      padding-top: 0px !important;
+    }
+
+    [class*=webPartContainer_] [id='bce-scroll-to-section'] {
+      padding-bottom: 0px;
+      padding-top: 0px;
+    }
+
+    /*-- Page Heading Ends--*/
+  }
+}
+
+
+.bceDesignSystem {
+  display: none;
+}

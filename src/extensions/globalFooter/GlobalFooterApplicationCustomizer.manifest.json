@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
+
+  "id": "70f50eee-f9d8-46b1-8da6-1c2a4694774b",
+  "alias": "GlobalFooterApplicationCustomizer",
+  "componentType": "Extension",
+  "extensionType": "ApplicationCustomizer",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false
+}
