@@ -44,10 +44,10 @@ export default class GlobalIdentityApplicationCustomizer
       let globalIdentityElement = React.createElement(GlobalIdentity,
         { webAbsoluteUrl: this.context.pageContext.legacyPageContext.webAbsoluteUrl, class: "bce-design-system-globalIdentity-top" });
       if (this.isSPO) {
-        this._globalIdentityReady('._2ConVLM0sTbBwAbw2pat-3 #O365_SearchBoxContainer').then(() => {
-          if (this._centerAlign.getElementsByClassName(styles.bceDesignSystemIdentity).length === 0) {
-            ReactDOM.render(globalIdentityElement, this._centerAlign);
-          }
+        this._globalIdentityReady('#O365_NavHeader').then(() => {
+          this._centerAlign = this._centerAlign.querySelector('div:nth-child(5)');
+          this._centerAlign.innerHTML = "";
+          ReactDOM.render(globalIdentityElement, this._centerAlign);
         })
       } else {
         this._globalIdentityReady('.o365cs-nav-centerAlign').then(() => {
@@ -64,7 +64,7 @@ export default class GlobalIdentityApplicationCustomizer
   private _globalIdentityReady(element: string): Promise<void> {
     const checking = (resolve: any, reject: any) => {
       let centerAlign = document.querySelectorAll(element);
-      if (centerAlign && centerAlign.length === 1) {
+      if (centerAlign && centerAlign.length !== 0) {
         this._centerAlign = centerAlign[0];
         this.identityCount = 0;
         resolve();

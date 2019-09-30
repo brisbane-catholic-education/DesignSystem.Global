@@ -8,26 +8,36 @@
   }
  [class*="bce-design-system-globalIdentity-top"]{
     display: none;
-    @media screen and (max-width: $ms-screen-max-xl) {
+    @media screen and (max-width: $ms-screen-max-lg) {
       display: block;
     }
   }
+  #O365_SearchBoxContainer{
+    display: none;
+  }
+  .o365cs-base .o365sx-appName, 
+  .o365cs-base .o365sx-appName:hover, 
+  .o365cs-base .o365sx-appName:visited, 
+  .o365cs-base .o365sx-appName:focus, 
+  .o365cs-base .o365sx-button,
+  .o365cs-base .o365sx-waffle{
+    background-color: #054166;
+    span{
+      color: white;
+    }
+  }
   #O365_NavHeader{
+    #O365_AppName{
+      display: none;
+    }
     ._16sMW9VwzaWw0bEAcTsBy0{
-      height: 98px;
-      display: inherit;
-      line-height: 98px;
-      vertical-align: middle;
-      text-align: center;
       padding-left: 20px;
       padding-right: 20px;
       .o365sx-button{
         height: 50px;
         width: 50px;
-        vertical-align: middle;
-        line-height: 98px;
+        margin-top: 20px;
         border: 1px solid gray;
-        background-color: #054166;
         span{
           color: white;
         }
