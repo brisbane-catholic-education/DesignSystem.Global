@@ -27,7 +27,7 @@ export default class BrandingApplicationCustomizer
     this.context.application.navigatedEvent.add(this, (eventArgs: any) => {
        console.log('BCE Design System Branding >> this.context.application.navigatedEvent');
        //uncomment this to enable admin features
-       //this._isAdmin = this.context.pageContext.legacyPageContext.isSiteAdmin;
+       this._isAdmin = this.context.pageContext.legacyPageContext.isSiteAdmin;
        this._renderTopPlaceHolder();
        this._showNavHeaderForAdmin();
        this._showRightMenusOnSmallScreenForAdmin();

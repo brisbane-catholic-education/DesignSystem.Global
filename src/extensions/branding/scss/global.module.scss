@@ -144,7 +144,9 @@ $bce-design-system-containerWidth: 1204px;
       opacity: 0.2 !important;
     }
   }
-
+  span.o365sx-appName{
+    display: none;
+  }
   .SPCanvas {
     h3 {
       font-size: $bce-design-system-fontSize-xl-plus;
@@ -164,6 +166,11 @@ $bce-design-system-containerWidth: 1204px;
     overflow-y: auto !important;
   }
 
+  [class*="backgroundImage_"]{
+    [class*="content_"]{
+      display: block;
+    }
+  }
   .SPPageChrome-app .commandBarWrapper {
     display: none;
   }
@@ -1866,10 +1873,8 @@ $bce-design-system-containerWidth: 1204px;
 
     .ms-Nav-groupContent {
       margin-top: 95px;
-
       >.ms-Nav-navItems {
         margin-bottom: 0;
-
         >.ms-Nav-navItem {
           >.ms-Nav-compositeLink {
             .ms-Button {
@@ -1899,6 +1904,9 @@ $bce-design-system-containerWidth: 1204px;
         top: 0px!important;
         .ms-Nav-group {
           padding-top: 98px;
+          @media screen and (max-width: $ms-screen-max-lg) {
+            padding-top: 0px;
+          }
           .ms-Nav-navItems {
             >.ms-Nav-navItem {
               .ms-Nav-compositeLink {

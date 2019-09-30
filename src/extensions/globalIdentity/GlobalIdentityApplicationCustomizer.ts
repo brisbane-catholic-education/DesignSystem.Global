@@ -21,8 +21,8 @@ export interface IGlobalIdentityApplicationCustomizerProperties {
 export default class GlobalIdentityApplicationCustomizer
   extends BaseApplicationCustomizer<IGlobalIdentityApplicationCustomizerProperties> {
   private _searchBox: Element | undefined;
+  private _searchBoxSPO: Element | undefined;
   private _centerAlign: Element | undefined;
-  //private _globalIdentityElement: React.ReactElement<IGlobalIdentityApplicationCustomizerProperties> | undefined;
   private count: number = 0;
   private identityCount: number = 0;
   private isSPO: boolean;
@@ -31,30 +31,39 @@ export default class GlobalIdentityApplicationCustomizer
     Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
     console.log('BCE Design System Branding Global Identity >> onInit()');
     this.isSPO = this.context.pageContext.legacyPageContext.isSPO;
-  
+
     this._renderGlobalIdentity();
     this._renderGlobalIdentityOnSmall();
-    //window.addEventListener("resize", this._renderGlobalIdentityOnSmall);
     return Promise.resolve();
   }
 
   //Add Global Identity on small device
   private _renderGlobalIdentityOnSmall(): void {
     try {
-      this._globalIdentityReady().then(() => {
-        if (this._centerAlign.getElementsByClassName(styles.bceDesignSystemIdentity).length === 0) {
-          let globalIdentityElement = React.createElement(GlobalIdentity, 
-            { webAbsoluteUrl: this.context.pageContext.legacyPageContext.webAbsoluteUrl, class: "bce-design-system-globalIdentity-top" });
-          ReactDOM.render(globalIdentityElement, this._centerAlign);
-        }
-      })
+
+      let globalIdentityElement = React.createElement(GlobalIdentity,
+        { webAbsoluteUrl: this.context.pageContext.legacyPageContext.webAbsoluteUrl, class: "bce-design-system-globalIdentity-top" });
+      if (this.isSPO) {
+        this._globalIdentityReady('._2ConVLM0sTbBwAbw2pat-3 #O365_SearchBoxContainer').then(() => {
+          if (this._centerAlign.getElementsByClassName(styles.bceDesignSystemIdentity).length === 0) {
+            ReactDOM.render(globalIdentityElement, this._centerAlign);
+          }
+        })
+      } else {
+        this._globalIdentityReady('.o365cs-nav-centerAlign').then(() => {
+          if (this._centerAlign.getElementsByClassName(styles.bceDesignSystemIdentity).length === 0) {
+            ReactDOM.render(globalIdentityElement, this._centerAlign);
+          }
+        })
+      }
     } catch (e) {
+
     }
   }
 
-  private _globalIdentityReady(): Promise<void> {
+  private _globalIdentityReady(element: string): Promise<void> {
     const checking = (resolve: any, reject: any) => {
-      let centerAlign = document.getElementsByClassName('o365cs-nav-centerAlign');
+      let centerAlign = document.querySelectorAll(element);
       if (centerAlign && centerAlign.length === 1) {
         this._centerAlign = centerAlign[0];
         this.identityCount = 0;
@@ -72,7 +81,7 @@ export default class GlobalIdentityApplicationCustomizer
   private _renderGlobalIdentity(): void {
     try {
       this._pageContainerReady().then(() => {
-        let globalIdentityElement = React.createElement(GlobalIdentity, 
+        let globalIdentityElement = React.createElement(GlobalIdentity,
           { webAbsoluteUrl: this.context.pageContext.legacyPageContext.webAbsoluteUrl, class: "bce-design-system-globalIdentity-left" });
         if (this.isSPO) {
           const divWarpper = document.createElement('div');
@@ -93,6 +102,7 @@ export default class GlobalIdentityApplicationCustomizer
     const checking = (resolve: any, reject: any) => {
       if (this.isSPO) {
         this._searchBox = document.querySelector('[class^=spNav_] > div');
+        //        this._searchBox = document.querySelector('#O365_SearchBoxContainer');
       } else {
         this._searchBox = document.querySelector('.ms-searchux-searchbox > div');
       }
