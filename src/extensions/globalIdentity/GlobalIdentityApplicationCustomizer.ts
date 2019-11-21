@@ -48,13 +48,13 @@ export default class GlobalIdentityApplicationCustomizer
           this._centerAlign = this._centerAlign.querySelector('div:nth-child(5)');
           this._centerAlign.innerHTML = "";
           ReactDOM.render(globalIdentityElement, this._centerAlign);
-        })
+        });
       } else {
         this._globalIdentityReady('.o365cs-nav-centerAlign').then(() => {
           if (this._centerAlign.getElementsByClassName(styles.bceDesignSystemIdentity).length === 0) {
             ReactDOM.render(globalIdentityElement, this._centerAlign);
           }
-        })
+        });
       }
     } catch (e) {
 

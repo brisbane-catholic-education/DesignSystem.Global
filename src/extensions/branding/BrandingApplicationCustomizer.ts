@@ -46,7 +46,7 @@ export default class BrandingApplicationCustomizer
         try{
           this._rightMenuReady().then(() => {
             this._rightMenus.style.display = 'block';
-          })
+          });
         }catch(e){
 
         }

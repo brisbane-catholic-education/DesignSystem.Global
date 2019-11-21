@@ -82,7 +82,7 @@ export default class PageTitleApplicationCustomizer
           });
         }, 500);
       }
-    }
+    };
     return new Promise(getHeading);
   }
 

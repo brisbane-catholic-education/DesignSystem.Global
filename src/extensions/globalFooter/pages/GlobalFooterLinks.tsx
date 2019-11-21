@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link} from 'office-ui-fabric-react';
 import { IGlobalFooterApplicationCustomizerProperties, IMSNavItem } from '../GlobalFooterApplicationCustomizer';
-import styles from '../GlobalFooter.module.scss'
+import styles from '../GlobalFooter.module.scss';
 
 export default class GlobalFooterLinks extends React.Component<IGlobalFooterApplicationCustomizerProperties> {
     public render(): React.ReactElement<IGlobalFooterApplicationCustomizerProperties> {

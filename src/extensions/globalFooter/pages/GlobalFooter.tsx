@@ -1,6 +1,6 @@
 import * as React from 'react';
-import styles from '../GlobalFooter.module.scss'
-import { IMSNavItem, IPageNavs } from '../GlobalFooterApplicationCustomizer'
+import styles from '../GlobalFooter.module.scss';
+import { IMSNavItem, IPageNavs } from '../GlobalFooterApplicationCustomizer';
 import { IGlobalFooterApplicationCustomizerProperties } from '../GlobalFooterApplicationCustomizer';
 import GlobalFooterLinks from './GlobalFooterLinks';
 import { IconButton } from 'office-ui-fabric-react';
