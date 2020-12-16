@@ -57,8 +57,8 @@ export default class BrandingApplicationCustomizer
     if(this._isAdmin){
         try{
           this._navHeaderReady().then(() => {
-            this._navHeader.style.setProperty('display', 'block', 'important');
-            this._commandBar.style.setProperty('display', 'block', 'important');
+            let head: HTMLHeadElement = document.head || document.getElementsByTagName('head')[0];
+            head.insertAdjacentHTML("beforeend", `<style>.SPPageChrome-app .commandBarWrapper, #SuiteNavPlaceHolder{display:block!important}</style>`);
           });
         }catch(e){
           console.error('Unable to hide nav header.');

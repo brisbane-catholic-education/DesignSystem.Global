@@ -31,119 +31,125 @@
 }
 
 .bceDesignSystemFooter{
-    font-size: $bce-design-system-fontSize-m;
-    a, span, button{
-        color: black!important;
+    [class="ms-Grid"]{
         font-size: $bce-design-system-fontSize-m;
-    }
-    width: 100%;
-    .footerTitle{
-        font-weight: $bce-design-system-fontWeight-m;
-        line-height: $bce-design-system-lineHeight-n;
-        a{
+        a, span, button{
+            color: black!important;
+            font-size: $bce-design-system-fontSize-m;
             text-decoration: none!important;
-            line-height: 22px;
         }
-    }
-    [class*="ms-Grid-col"]{
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-right: 32px;
-        padding-left: 32px;
-        @media screen and (max-width: $ms-screen-max-sm) {
-            padding:20px;
+        a:visited{
+            color: black!important;
         }
-    }
-    [class*="ms-Grid-row"]{
-        border-top: 1px solid #979797;
-        border-bottom: 1px solid #979797;
-    }
-    .globalFooterNavigation{
-        padding-left: 8px;
+        width: 100%;
+        .footerTitle{
+            font-weight: $bce-design-system-fontWeight-m;
+            line-height: $bce-design-system-lineHeight-n;
+            a{
+                text-decoration: none!important;
+                line-height: 22px;
+            }
+        }
         [class*="ms-Grid-col"]{
-            padding-top: 42px;
-            padding-bottom: 42px;
-            @media screen and (max-width: $ms-screen-max-md) {
-                padding-top: 24px!important;
-                padding-bottom: 24px!important;
-                a{
-                    font-size: 16px;
-                    line-height: 24px; 
-                    button{
-                        height: 14px;
-                        [class*="ms-Button-flexContainer"]{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-right: 32px;
+            padding-left: 32px;
+            @media screen and (max-width: $ms-screen-max-sm) {
+                padding:20px;
+            }
+        }
+        [class*="ms-Grid-row"]{
+            border-top: 1px solid #979797;
+            border-bottom: 1px solid #979797;
+        }
+        .globalFooterNavigation{
+            padding-left: 8px;
+            [class*="ms-Grid-col"]{
+                padding-top: 42px;
+                padding-bottom: 42px;
+                @media screen and (max-width: $ms-screen-max-md) {
+                    padding-top: 24px!important;
+                    padding-bottom: 24px!important;
+                    a{
+                        font-size: 16px;
+                        line-height: 24px; 
+                        button{
                             height: 14px;
-                            i{
-                                padding-left: 0px;
+                            [class*="ms-Button-flexContainer"]{
+                                height: 14px;
+                                i{
+                                    padding-left: 0px;
+                                }
                             }
                         }
                     }
                 }
-            }
-            @media screen and (max-width: $ms-screen-max-md) {
-                padding-top: 16px!important;
-                padding-bottom: 16px!important;
-            }
+                @media screen and (max-width: $ms-screen-max-md) {
+                    padding-top: 16px!important;
+                    padding-bottom: 16px!important;
+                }
 
-        }
-        > div:nth-child(1){
-            border-right: 1px solid #979797;
-        }
-       > div:nth-child(2){
-            text-align: right !important;
-        }
-        a{
-            font-size: 20px;
-            line-height: 48px;
-            vertical-align: -webkit-baseline-middle;
-            text-decoration: none;
-        }
-        
-    }
-    [class="container"]{
-        padding-left: 16px;
-        .globalFooterLinksTitle{
-            border: none!important;
-            width: 100%;
-            [class*='ms-Grid-col']{
-                padding-top: 32px;
-                padding-bottom: 0;
             }
-        }
-        .globalFooterLinks{
-            border-top: none;
-            border-bottom: none;
-            padding-bottom: 40px;
-            [class*='ms-Grid-col']{
-              padding-top: (0.5em);
-              padding-bottom: 0;
+            > div:nth-child(1){
+                border-right: 1px solid #979797;
             }
-        }
-    }
-
-    .globalFooterbar{
-        padding-left: 16px;
-        @media screen and (max-width: $ms-screen-max-md) {
-            [class*="ms-lg9"]{
-                padding-top: 0px;
+        > div:nth-child(2){
+                text-align: right !important;
             }
-        }
-
-        [class*="ms-lg3"]{
-            padding-bottom: 8px;
-        }
-        >div:nth-child(2){
             a{
-                text-decoration: none!important;
-                padding-right: 5px;
-                padding-left: 5px;
-            }
-            a:nth-child(1){
-                padding-left: 0px;
+                font-size: 20px;
+                line-height: 48px;
+                vertical-align: -webkit-baseline-middle;
+                text-decoration: none;
             }
         }
-        a{
-            line-height: 22px;
+
+        [class="container"]{
+            padding-left: 16px;
+            .globalFooterLinksTitle{
+                border: none!important;
+                width: 100%;
+                [class*='ms-Grid-col']{
+                    padding-top: 32px;
+                    padding-bottom: 0;
+                }
+            }
+            .globalFooterLinks{
+                border-top: none;
+                border-bottom: none;
+                padding-bottom: 40px;
+                [class*='ms-Grid-col']{
+                padding-top: (0.5em);
+                padding-bottom: 0;
+                }
+            }
+        }
+
+        .globalFooterbar{
+            padding-left: 16px;
+            @media screen and (max-width: $ms-screen-max-md) {
+                [class*="ms-lg9"]{
+                    padding-top: 0px;
+                }
+            }
+
+            [class*="ms-lg3"]{
+                padding-bottom: 8px;
+            }
+            >div:nth-child(2){
+                a{
+                    text-decoration: none!important;
+                    padding-right: 5px;
+                    padding-left: 5px;
+                }
+                a:nth-child(1){
+                    padding-left: 0px;
+                }
+            }
+            a{
+                line-height: 22px;
+            }
         }
     }
 }

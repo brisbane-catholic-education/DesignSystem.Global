@@ -1,22 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 @import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
 @import '~office-ui-fabric-react/dist/sass/_References.scss';
+$bce-design-system-color-darkNavy: #054166;
+$bce-design-system-color-extraDarkNavy: #02273C;
 $bce-design-system-color-darkBlue: #054166;
 $bce-design-system-color-lightBlue: #4fc6e0;
 $bce-design-system-color-blue: #0979BE;
+$bce-design-system-color-hoverBlue: #1072AE;
 $bce-design-system-color-white: #ffffff;
 $bce-design-system-color-black: #000000;
 $bce-design-system-color-purple: #8857a4;
 $bce-design-system-color-orange: #fd770b;
 $bce-design-system-color-red: #ef404a;
+$bce-design-system-color-alertRed: #A80000;
 $bce-design-system-color-rose: #ffb4e5;
 $bce-design-system-color-green: #00ae4d;
 $bce-design-system-color-gold: #ffcb05;
-$bce-design-system-color-lightGray: #d3d3d3;
-$bce-design-system-color-darkGray: #979593;
-$bce-design-system-color-gray20: #f3f2f1;
-$bce-design-system-color-gray30: #edebe9;
-$bce-design-system-color-gray40:#e1dfdd;
+$bce-design-system-color-grey1:#F4F4F4;
+$bce-design-system-color-grey2:#EAEAEA;
+$bce-design-system-color-grey3:#D0D0D0;
+$bce-design-system-color-grey4:#A6A6A6;
+$bce-design-system-color-grey5:#666666;
+$bce-design-system-color-grey6:#333333;
+$bce-design-system-color-tintLightBlue:#D6ECF0;
+$bce-design-system-color-tintGreen:#DFF6DD;
+$bce-design-system-color-tintExtraLightBlue:#F8F9FB;
+$bce-design-system-color-tinyGold:#FFF7DA;
+$bce-design-system-color-tintOrange:#FED9cc;
+$bce-design-system-color-tintRed:#FDE7E9;
+$bce-design-system-color-tintRose:#FFE4F6;
 $bce-design-system-fontSize-su-plus: 54px;
 $bce-design-system-fontSize-su: 42px;
 $bce-design-system-fontSize-xxl-plus: 34px;
@@ -74,7 +86,7 @@ $bce-design-system-containerWidth: 1204px;
   }
 
   li {
-    margin-bottom: 22px;
+    margin-bottom: 8px;
   }
 
   p {
@@ -83,7 +95,7 @@ $bce-design-system-containerWidth: 1204px;
   }
 
   a {
-    color: $bce-design-system-color-lightBlue !important;
+    color: $bce-design-system-color-blue !important;
     overflow-wrap: break-word;
 
     &:visited {
@@ -91,7 +103,7 @@ $bce-design-system-containerWidth: 1204px;
     }
 
     &:hover {
-      color: $bce-design-system-color-darkBlue !important;
+      color: $bce-design-system-color-hoverBlue !important;
     }
 
     &:focus {
@@ -105,7 +117,7 @@ $bce-design-system-containerWidth: 1204px;
     }
 
     &:active {
-      color: $bce-design-system-color-darkBlue !important;
+      color: $bce-design-system-color-hoverBlue !important;
     }
 
     .is-disabled {
@@ -114,6 +126,20 @@ $bce-design-system-containerWidth: 1204px;
 
     &:link {
       text-decoration: underline;
+    }
+
+    [class*="externalLinksIcon_"]{
+      .ms-Button{
+       i{
+         color: $bce-design-system-color-blue;
+       } 
+      }
+    }
+  }
+  a.ms-Button--primary, 
+  a.ms-Button--compoundPrimary {
+    &:visited {
+      color: white!important;
     }
   }
 
@@ -127,9 +153,6 @@ $bce-design-system-containerWidth: 1204px;
     i[data-icon-name="NavigateExternalInline"] {
       color: white;
     }
-
-    color: $bce-design-system-color-lightBlue !important;
-
     .ms-Button--default {
       font-weight: $bce-design-system-fontWeight-r;
     }
@@ -139,6 +162,17 @@ $bce-design-system-containerWidth: 1204px;
     }
   }
 
+  [class*="imageFrame_"]{
+    [class*="backgroundImage_"]{
+      [class*="content_"]{
+        display: block;
+      }
+    }
+  }
+
+  .o365cs-nav-topItem a.o365cs-nav-appTitle.o365cs-topnavText{
+    display: none;
+  }
   .ms-FocusZone {
     .ms-Overlay {
       background-color: black !important;
@@ -330,7 +364,7 @@ $bce-design-system-containerWidth: 1204px;
   nav[role="navigation"] {
     .ms-Nav-link {
       &::after {
-        border-left: 3px solid #0979BE;
+        border-left: 3px solid #054166;
       }
     }
   }
@@ -459,7 +493,7 @@ $bce-design-system-containerWidth: 1204px;
     padding-bottom: 8px;
   }
 
-  .bce-design-system-subsectionTitle2 {
+  .bce-design-system-subsectionTitleMedium {
     font-size: $bce-design-system-fontSize-m-plus;
     font-weight: $bce-design-system-fontWeight-b;
     color: $bce-design-system-color-darkBlue !important;
@@ -497,12 +531,21 @@ $bce-design-system-containerWidth: 1204px;
       display: inline !important;
     }
   }
-
+ 
   /* -- Fonts Starts --*/
   .dark-navy {
     color: $bce-design-system-color-darkBlue;
   }
+   .extra-dark-navy {
+    color: $bce-design-system-color-extraDarkNavy;
+  }
 
+  .blue {
+    color: $bce-design-system-color-blue;
+  }
+    .hover-blue {
+    color: $bce-design-system-color-hoverBlue;
+  }
   .light-blue {
     color: $bce-design-system-color-lightBlue;
   }
@@ -526,6 +569,9 @@ $bce-design-system-containerWidth: 1204px;
   .red {
     color: $bce-design-system-color-red;
   }
+    .alert-red {
+    color: $bce-design-system-color-alertRed;
+  }
 
   .rose {
     color: $bce-design-system-color-rose;
@@ -539,26 +585,90 @@ $bce-design-system-containerWidth: 1204px;
     color: $bce-design-system-color-gold;
   }
 
-  .light-gray {
-    color: $bce-design-system-color-lightGray;
+	.tint-light-blue{
+	  color: $bce-design-system-color-tintLightBlue;
+	}
+		.tint-light-green{
+	  color: $bce-design-system-color-tintGreen;
+	}
+		.tint-extra-light-blue{
+	  color: $bce-design-system-color-tintExtraLightBlue;
+	}
+		.tint-gold{
+	  color: $bce-design-system-color-tinyGold;
+	}
+		.tint-orange{
+	  color: $bce-design-system-color-tintOrange;
+	}
+		.tint-red{
+	  color: $bce-design-system-color-tintRed;
+	}
+			.tint-rose{
+	  color: $bce-design-system-color-tintRose;
+	}
+  .grey-1 {
+    color: $bce-design-system-color-grey1;
   }
-
-  .dark-gray {
-    color: $bce-design-system-color-darkGray;
+    .grey-2 {
+    color: $bce-design-system-color-grey2;
   }
-
-  .background-light-gray {
-    background-color: $bce-design-system-color-lightGray;
+    .grey-3 {
+    color: $bce-design-system-color-grey3;
   }
-
-  .background-dark-gray {
-    background-color: $bce-design-system-color-darkGray;
+    .grey-4 {
+    color: $bce-design-system-color-grey4;
   }
-
+    .grey-5 {
+    color: $bce-design-system-color-grey5;
+  }
+    .grey-6 {
+    color: $bce-design-system-color-grey6;
+  }
+	.background-tint-light-blue{
+	  background-color: $bce-design-system-color-tintLightBlue;
+	}
+		.background-tint-green{
+	  background-color: $bce-design-system-color-tintGreen;
+	}
+		.background-tint-extra-light-blue{
+	  background-color: $bce-design-system-color-tintExtraLightBlue;
+	}
+		.background-tint-gold{
+	  background-color: $bce-design-system-color-tinyGold;
+	}
+		.background-tint-orange{
+	 background-color: $bce-design-system-color-tintOrange;
+	}
+		.background-tint-red{
+	  background-color: $bce-design-system-color-tintRed;
+	}
+			.background-tint-rose{
+	  background-color: $bce-design-system-color-tintRose;
+	}
+  .background-grey-1 {
+    background-color: $bce-design-system-color-grey1;
+  }
+  .background-grey-2 {
+    background-color: $bce-design-system-color-grey2;
+  }
+    .background-grey-3 {
+    background-color: $bce-design-system-color-grey3;
+  }
+    .background-grey-4 {
+    background-color: $bce-design-system-color-grey4;
+  }
+    .background-grey-5 {
+    background-color: $bce-design-system-color-grey5;
+  }
+    .background-grey-6 {
+    background-color: $bce-design-system-color-grey6;
+  }
   .background-dark-navy {
     background-color: $bce-design-system-color-darkBlue;
   }
-
+  .background-extra-dark-navy {
+    background-color: $bce-design-system-color-extraDarkNavy;
+  }
   .background-light-blue {
     background-color: $bce-design-system-color-lightBlue;
   }
@@ -583,6 +693,10 @@ $bce-design-system-containerWidth: 1204px;
     background-color: $bce-design-system-color-red;
   }
 
+  .background-alert-red {
+    background-color: $bce-design-system-color-alertRed;
+  }
+
   .background-rose {
     background-color: $bce-design-system-color-rose;
   }
@@ -594,6 +708,7 @@ $bce-design-system-containerWidth: 1204px;
   .background-gold {
     background-color: $bce-design-system-color-gold;
   }
+
 
   .Italic {
     font-style: italic;
@@ -830,7 +945,7 @@ $bce-design-system-containerWidth: 1204px;
 
     &.is-disabled {
       .ms-Checkbox-checkbox {
-        border-color: lightgray !important;
+        border-color: $bce-design-system-color-grey1 !important;
       }
     }
 
@@ -861,7 +976,7 @@ $bce-design-system-containerWidth: 1204px;
 
       :hover {
         opacity: 1;
-        color: lightgray;
+        color: $bce-design-system-color-grey1;
       }
     }
   }
@@ -1050,7 +1165,7 @@ $bce-design-system-containerWidth: 1204px;
       }
 
       &:focus-within {
-        border: 1px solid $bce-design-system-color-lightGray;
+        border: 1px solid $bce-design-system-color-grey1;
       }
     }
 
@@ -1069,7 +1184,7 @@ $bce-design-system-containerWidth: 1204px;
       }
 
       &:focus-within {
-        border: 1px solid $bce-design-system-color-lightGray;
+        border: 1px solid $bce-design-system-color-grey1;
       }
     }
   }
@@ -1214,7 +1329,7 @@ $bce-design-system-containerWidth: 1204px;
     .ms-Pivot {
       .ms-Pivot-link.is-selected {
         &::before {
-          border-bottom: 2px solid #0979BE;
+          border-bottom: 2px solid $bce-design-system-color-blue;
         }
       }
     }
@@ -1231,7 +1346,7 @@ $bce-design-system-containerWidth: 1204px;
       }
 
       .ms-Pivot-link.is-selected {
-        background: #0979BE;
+        background: $bce-design-system-color-blue;
         color: white;
       }
     }
@@ -1242,11 +1357,11 @@ $bce-design-system-containerWidth: 1204px;
   /* -- Search Box --*/
   .ms-SearchBox {
     &:focus {
-      border: 1px solid #0979BE !important;
+      border: 1px solid $bce-design-system-color-blue !important;
     }
 
     &:focus-within {
-      border: 1px solid #0979BE !important;
+      border: 1px solid $bce-design-system-color-blue !important;
     }
 
     .ms-SearchBox-field {
@@ -1256,7 +1371,7 @@ $bce-design-system-containerWidth: 1204px;
 
     .ms-SearchBox-iconContainer {
       i {
-        color: #0979BE;
+        color: $bce-design-system-color-blue;
       }
     }
   }
@@ -1266,14 +1381,14 @@ $bce-design-system-containerWidth: 1204px;
       border-top: none;
       border-left: none;
       border-right: none;
-      border-bottom: 1px solid #0979BE !important;
+      border-bottom: 1px solid $bce-design-system-color-blue !important;
     }
 
     &:focus-within {
       border-top: none;
       border-left: none;
       border-right: none;
-      border-bottom: 1px solid #0979BE !important;
+      border-bottom: 1px solid $bce-design-system-color-blue !important;
     }
   }
 
@@ -1384,12 +1499,12 @@ $bce-design-system-containerWidth: 1204px;
 
   .ms-Button--primary,
   .ms-Button--compoundPrimary {
-    background-color: $bce-design-system-color-lightBlue !important;
-    border-color: $bce-design-system-color-lightBlue;
+    background-color: $bce-design-system-color-blue !important;
+    border-color: $bce-design-system-color-blue;
     color: rgb(255, 255, 255) !important;
 
     &:hover {
-      background-color: #1072ae !important;
+      background-color: $bce-design-system-color-blue  !important;
       color: rgb(255, 255, 255);
 
       [class*="ms-Button-label"] {
@@ -1401,7 +1516,7 @@ $bce-design-system-containerWidth: 1204px;
     &:focus {
       border: 1px solid #605d59;
       color: white !important;
-      background: #1072ae !important;
+      background: $bce-design-system-color-blue !important;
 
       [class*="ms-Button-label"] {
         font-weight: $bce-design-system-fontWeight-n;
@@ -1412,7 +1527,7 @@ $bce-design-system-containerWidth: 1204px;
     &:focus-within {
       border: 1px solid #605d59;
       color: white !important;
-      background: #1072ae !important;
+      background: $bce-design-system-color-blue  !important;
 
       [class*="ms-Button-label"] {
         font-weight: $bce-design-system-fontWeight-n;
@@ -1462,7 +1577,7 @@ $bce-design-system-containerWidth: 1204px;
 
   [data-automation-id="pageHeader"] {
     background-color: rgb(250, 249, 248);
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid $bce-design-system-color-grey1;
     height: 257px;
 
     .ms-Link {
@@ -1499,7 +1614,7 @@ $bce-design-system-containerWidth: 1204px;
 
         .o365cs-rsp-m-hide {
           margin-left: 20px;
-          border: 1px solid gray;
+          border: 1px solid grey;
         }
       }
 
@@ -1525,6 +1640,14 @@ $bce-design-system-containerWidth: 1204px;
   /* -- Page Container Ends -- */
 
   /* -- Dropdown Starts --*/
+  .ms-Dropdown.is-disabled{
+    .ms-Dropdown-title{
+      span{
+        color: $bce-design-system-color-grey3;
+      }
+    }
+  }
+
   .ms-Dropdown-label {
     padding-bottom: 4px;
   }
@@ -1678,7 +1801,7 @@ $bce-design-system-containerWidth: 1204px;
       }
 
       &:hover {
-        background: $bce-design-system-color-gray20;
+        background: $bce-design-system-color-grey1;
       }
 
       &:focus {
@@ -1690,11 +1813,11 @@ $bce-design-system-containerWidth: 1204px;
       }
 
       &:active {
-        background: $bce-design-system-color-darkGray;
+        background: $bce-design-system-color-grey4;
       }
 
       &:visited {
-        background: $bce-design-system-color-darkGray;
+        background: $bce-design-system-color-grey4;
       }
 
       cursor: pointer;
@@ -1706,7 +1829,7 @@ $bce-design-system-containerWidth: 1204px;
     margin-bottom: 0px;
 
     &:hover {
-      background: $bce-design-system-color-gray20;
+      background: $bce-design-system-color-grey1;
     }
 
     &:focus {
@@ -1718,11 +1841,11 @@ $bce-design-system-containerWidth: 1204px;
     }
 
     &:active {
-      background: $bce-design-system-color-darkGray;
+      background: $bce-design-system-color-grey4;
     }
 
     &:visited {
-      background: $bce-design-system-color-darkGray;
+      background: $bce-design-system-color-grey4;
     }
 
     width:40px;
