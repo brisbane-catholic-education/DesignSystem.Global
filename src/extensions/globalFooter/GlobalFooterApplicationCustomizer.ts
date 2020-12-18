@@ -140,7 +140,6 @@ export default class GlobalFooterApplicationCustomizer
           this._generateFooterNavs(root);
           this._ensureNodeHeading();
           this._leftNavSelected();
-
           if(this._currentUrl.toLocaleLowerCase().indexOf('/sitepages/home.aspx') > -1){
             (document.querySelector("[class^='globalFooterNavigation_']") as HTMLElement).style.display = "none";
           }
@@ -177,9 +176,12 @@ export default class GlobalFooterApplicationCustomizer
             console.log('BCE Design System Branding Page Title>> Setting next button');
             if (i + 1 === nodes.Nodes.length) {
               //End of current node, find next node.
-              if (index + 1 <= root.Nodes.length) {
+              if (index + 1 < root.Nodes.length) {
                 this._pageNavs.next = root.Nodes[index + 1].Nodes[0].Key;
                 this._pageNavs.nextTitle = root.Nodes[index + 1].Nodes[0].Title;
+              }else{
+                this._pageNavs.next = "/SitePages/Home.aspx";
+                this._pageNavs.nextTitle = "Home";
               }
             }else{
               this._pageNavs.next =nodes.Nodes[i + 1].Key;
@@ -230,7 +232,8 @@ export default class GlobalFooterApplicationCustomizer
     const checking = (resolve: any, reject: any) => {
       let contentPageContent = document.querySelector('[data-automation-id="pageHeader"] [class*="content"]') as HTMLElement;
       let homePageContent = document.querySelector('[class*="canvasWrapper_"]') as HTMLElement;
-      if (this._isHomePage) {
+      let navButtons = document.querySelectorAll('.ms-Nav .ms-Nav-compositeLink:not(.is-expanded) button.ms-Nav-link');
+      if (this._isHomePage && navButtons.length === 6) {
         if (homePageContent) {
           this._pageHeaderContent = homePageContent;
           resolve();
@@ -241,7 +244,7 @@ export default class GlobalFooterApplicationCustomizer
         }
         this.count++;
       } else {
-        if (contentPageContent) {
+        if (contentPageContent && navButtons.length === 6) {
           this._pageHeaderContent = contentPageContent;
           resolve();
         } else if (this.count < 60) {

@@ -94,6 +94,9 @@ $bce-design-system-containerWidth: 1204px;
     margin-bottom: 22px;
   }
 
+  a:link{
+    text-decoration: none!important;
+  }
   a {
     color: $bce-design-system-color-blue !important;
     overflow-wrap: break-word;
