@@ -232,7 +232,7 @@ export default class GlobalFooterApplicationCustomizer
     const checking = (resolve: any, reject: any) => {
       let contentPageContent = document.querySelector('[data-automation-id="pageHeader"] [class*="content"]') as HTMLElement;
       let homePageContent = document.querySelector('[class*="canvasWrapper_"]') as HTMLElement;
-      let navButtons = document.querySelectorAll('.ms-Nav .ms-Nav-compositeLink:not(.is-expanded) button.ms-Nav-link');
+      let navButtons = document.querySelectorAll('[class*="spNav_"] .ms-Nav .ms-Nav-compositeLink:not(.is-expanded) button.ms-Nav-link');
       if (this._isHomePage && navButtons.length === 6) {
         if (homePageContent) {
           this._pageHeaderContent = homePageContent;
