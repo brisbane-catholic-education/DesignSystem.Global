@@ -97,6 +97,7 @@ $bce-design-system-containerWidth: 1204px;
   a:link{
     text-decoration: none!important;
   }
+
   a {
     color: $bce-design-system-color-blue !important;
     overflow-wrap: break-word;
@@ -171,6 +172,12 @@ $bce-design-system-containerWidth: 1204px;
         display: block;
       }
     }
+  }
+
+  a.bce-design-system-link-underline,
+  a.bce-design-system-link-underline:link,
+  a span.a.bce-design-system-link-underline{
+    text-decoration: underline!important;
   }
 
   .o365cs-nav-topItem a.o365cs-nav-appTitle.o365cs-topnavText{
@@ -363,6 +370,66 @@ $bce-design-system-containerWidth: 1204px;
     }
   }
 
+  /* -- Persona --*/
+  .ms-Persona{
+    .ms-Persona-initials{
+      background-color: #0979BE;
+      span{
+        color: white;
+      }
+    }
+  }
+
+  .ms-Persona.ms-Persona--size72{
+    .ms-Persona-initials{
+      span{
+        font-size: 28px;
+      }
+    }
+    .ms-Persona-primaryText{
+      .ms-TooltipHost{
+        font-size: 20px;
+      }
+    }
+  }
+  .ms-Persona.ms-Persona--size48{
+    .ms-Persona-initials{
+      span{
+        font-size: 20px;
+      }
+    }
+    .ms-Persona-primaryText{
+      .ms-TooltipHost{
+        font-size: 20px;
+      }
+    }
+    .ms-Persona-secondaryText{
+      .ms-TooltipHost{
+        font-size: 14px;
+      }
+    }
+  }
+  .ms-Persona.ms-Persona--size24, .ms-Persona.ms-Persona--size16{
+    .ms-Persona-initials{
+      span{
+        font-size: 11px;
+      }
+    }
+  }
+  .ms-Persona.ms-Persona--size16{
+    .ms-Persona-coin{
+      height: 24px;
+      width: 24px;
+      .ms-Persona-imageArea{
+        height: 24px;
+        width: 24px;
+        .ms-Persona-initials, .ms-Persona-image{
+          height: 24px;
+          width: 24px;
+        }
+      }
+    }
+  }
   /* -- Left Nav--*/
   nav[role="navigation"] {
     .ms-Nav-link {
@@ -675,7 +742,12 @@ $bce-design-system-containerWidth: 1204px;
   .background-light-blue {
     background-color: $bce-design-system-color-lightBlue;
   }
-
+  .background-hover-blue{
+    background-color: $bce-design-system-color-hoverBlue;
+  }
+  .background-link-blue{
+    background-color: $bce-design-system-color-blue;
+  }
   .background-white {
     background-color: $bce-design-system-color-white;
   }
@@ -1333,6 +1405,9 @@ $bce-design-system-containerWidth: 1204px;
       .ms-Pivot-link.is-selected {
         &::before {
           border-bottom: 2px solid $bce-design-system-color-blue;
+        }
+        .ms-Pivot-text{
+          color: white;
         }
       }
     }
@@ -2101,18 +2176,22 @@ $bce-design-system-containerWidth: 1204px;
   /* -- blockquote --*/
   blockquote.bce-design-system-blockquote-regular {
     margin: 0 auto;
-    margin-top: 50px;
+    //margin-top: 32px;
+    padding-left: 40px;
     color: #054166;
     line-height: 1.6;
     position: relative;
 
     p {
-      margin-left: 45px;
+      margin-left: 32px;
       color: #881798;
       padding-top: 10px;
     }
   }
 
+    p.ms-TextField-errorMessage span[data-automation-id="error-message"]{
+      color: #a80000!important;
+    }
   blockquote.bce-design-system-blockquote-extraLarge {
     margin: 0 auto;
     color: #054166;
@@ -2153,11 +2232,11 @@ $bce-design-system-containerWidth: 1204px;
     font-family: Raleway, Helvetica, Arial, serif !important;
     content: "\201C";
     color: #8857a3;
-    font-size: 100px;
+    font-size: 70px;
     font-weight: 600;
     position: absolute;
-    left: -15px;
-    top: -30px;
+    left: 32px;
+    top: -15px;
   }
 
   blockquote::after {

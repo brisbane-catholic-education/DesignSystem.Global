@@ -3,7 +3,7 @@
   "solution": {
     "name": "BCE Design System Branding Core",
     "id": "550183df-a3c0-4e87-bc63-cd23892a7c5a",
-    "version": "1.2.0.0",
+    "version": "1.2.0.4",
     "includeClientSideAssets": true,
     "features": [
       {
